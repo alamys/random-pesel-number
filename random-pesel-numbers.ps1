@@ -15,14 +15,14 @@ while ($true) {
 
     # Sprawdz, czy podano dokladnie 11 cyfr
     if ($pesel.Length -ne 11 -or $pesel -match '\D') {
-        Write-Host "Numer PESEL powinien skladaæ sie z 11 cyfr."
+        Write-Host "Numer PESEL powinien skladaÄ‡ sie z 11 cyfr."
     }
     else {
         do {
             # Losowo wybierz 4 pozycje z numeru PESEL
             $randomIndexes = 0..10 | Get-Random -Count 4
 
-            # Sprawdz, czy wybrane pozycje spelniaja warunki (max 3 cyfry z daty urodzenia, pozycje nie mog¹ nastêpowaæ jedna po drugiej)
+            # Sprawdz, czy wybrane pozycje spelniaja warunki (max 3 cyfry z daty urodzenia, pozycje nie moga nastÄ™powaÄ‡ jedna po drugiej)
             $isValid = IsBirthDate $randomIndexes
         } while (-not $isValid)
 
